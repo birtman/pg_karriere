@@ -1,0 +1,205 @@
+$midnight: white;
+$red: #e30613;
+$clouds: #ecf0f1;
+$black: #0f0f10;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap");
+
+// General
+body {
+  color: $midnight;
+  box-shadow: inset 50px 0px 70px rgba(0, 0, 0, 0.15);
+  padding: 0 1em 1em;
+  font-family: "Roboto", sans-serif;
+  @media screen and (max-width: 992px) {
+    font-size: 0.9rem;
+  }
+}
+
+.ausbildungsberufe--col-headline {
+  width: 35%;
+  margin: 0 0 0 5%;
+  padding: 0 5% 0 0;
+  line-height: 200%;
+  @media screen and (max-width: 992px) {
+    margin-bottom: 8%;
+  }
+}
+
+.ausbildungsberufe--span {
+  margin: 0 0 0.5em;
+  font-weight: normal;
+  margin-top: 100px;
+  color: $black;
+  font-size: 1.8rem;
+  font-weight: 700;
+  &:nth-child(1) {
+    color: $red;
+    padding-left: 5%;
+  }
+}
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+// Layout
+.ausbildungsberufe--row {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 90vw;
+  padding-top: 10%;
+  padding-bottom: 10%;
+
+  .col {
+    flex: 1;
+    &:last-child {
+      margin-left: 1em;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+  }
+}
+/* Accordion styles */
+
+.marginal--wrap {
+  display: flex;
+  font-size: 13px;
+  font-weight: 400;
+  width: 100%;
+  margin-bottom: 4%;
+  padding-bottom: 4%;
+}
+
+.marginal--details {
+  width: 50%;
+  line-height: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  p {
+    color: $red;
+    font-weight: 700;
+    border-bottom: solid $red 0.5px;
+    padding-bottom: 10px;
+    margin: 4%;
+  }
+  span {
+    line-height: 1.6rem;
+    color: $black;
+    font-weight: 400;
+    border-bottom: solid $red 0.5px;
+    padding-bottom: 10px;
+    margin: 4%;
+  }
+}
+
+.ausbildungsberufe--tab-content {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: $black;
+}
+
+.ausbildungsberufe--tabs {
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+}
+
+.ausbildungsberufe--col {
+  box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
+  background-color: $clouds;
+}
+
+.ausbildungsberufe--tab {
+  width: 100%;
+  color: $black;
+  font-weight: 700;
+  overflow: hidden;
+  border-top: solid 0.5px $clouds;
+  border-bottom: solid 0.5px $red;
+  box-shadow: inset 50px 0px 70px rgba(0, 0, 0, 0.15);
+
+  &-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background: $midnight;
+
+    cursor: pointer;
+    /* Icon */
+    &:hover {
+      background: $black;
+    }
+    &::after {
+      content: "\276F";
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      transition: all 0.35s;
+      color: $red;
+    }
+  }
+  &-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: $midnight;
+    background: white;
+    transition: all 0.35s;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: white;
+    cursor: pointer;
+    &:hover {
+      background: $red;
+    }
+  }
+}
+
+.ausbildungsberufe--tab-label {
+  align-items: center;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    height: 7px;
+    width: 30px;
+    right: 9px;
+    bottom: 0;
+    background-color: $red;
+  }
+}
+
+.marginal--number {
+  font-size: 36px;
+  color: $red;
+  overflow: hidden;
+  position: absolute;
+}
+
+// :checked
+input:checked {
+  + .ausbildungsberufe--tab-label {
+    color: $red;
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+  ~ .ausbildungsberufe--tab-content {
+    max-height: 100vh;
+    padding: 1em;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: $black;
+    line-height: 175%;
+  }
+}
+
+.ausbildungsberufe--tab-close {
+  color: $red;
+}
