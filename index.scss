@@ -95,6 +95,15 @@ input {
   }
 }
 
+@media screen and (max-width: 414px) {
+  .marginal--details {
+    span {
+      font-size: 12px;
+      line-height: 1.6;
+    }
+  }
+}
+
 .ausbildungsberufe--tab-content {
   font-size: 1.1rem;
   font-weight: 400;
@@ -118,7 +127,8 @@ input {
   font-weight: 700;
   overflow: hidden;
   border-top: solid 0.5px $clouds;
-  border-bottom: solid 0.5px $red;
+  border-bottom: solid 0.5px $clouds;
+
   box-shadow: inset 50px 0px 70px rgba(0, 0, 0, 0.15);
 
   &-label {
@@ -173,6 +183,9 @@ input {
     bottom: 0;
     background-color: $red;
   }
+  &:hover {
+    color: $red;
+  }
 }
 
 .marginal--number {
@@ -202,4 +215,10 @@ input:checked {
 
 .ausbildungsberufe--tab-close {
   color: $red;
+}
+
+@media screen and (max-width: 992px) {
+  .content {
+    font-size: 0.8em;
+  }
 }
