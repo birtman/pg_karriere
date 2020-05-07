@@ -133,7 +133,7 @@ input {
 
   &-label {
     display: flex;
-    justify-content: space-between;
+
     padding: 1em;
     background: $midnight;
 
@@ -221,4 +221,12 @@ input:checked {
   .content {
     font-size: 0.8em;
   }
+}
+
+.ausbildungsberufe--tab-span {
+  color: $red;
+  padding-left: 2%;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  letter-spacing: 0.3em;
 }
