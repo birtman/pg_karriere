@@ -65,12 +65,27 @@ input {
   margin-bottom: 4%;
   padding-bottom: 4%;
 }
+
+@media screen and (max-width: 414px) {
+  .marginal--wrap {
+    flex-direction: column;
+  }
+}
+
 .marginal--details {
   width: 50%;
   line-height: 0.5rem;
   display: flex;
   flex-direction: column;
 }
+
+@media screen and (max-width: 414px) {
+  .marginal--details {
+    width: 100%;
+    margin-top: 12%;
+  }
+}
+
 .marginal--details p {
   color: #e30613;
   font-weight: 700;
@@ -192,6 +207,8 @@ input:checked ~ .ausbildungsberufe--tab-content {
 @media screen and (max-width: 992px) {
   .content {
     font-size: 0.8em;
+    margin-bottom: 10%;
+    line-height: 1.6;
   }
 }
 .ausbildungsberufe--tab-span {
